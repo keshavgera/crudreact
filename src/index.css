@@ -329,6 +329,149 @@ details {
   display: block;
 }
 
+
+
+.theme-btn-primary {
+  height: 15px;
+  flex-grow: 0;
+  font-family: Inter;
+  font-size: 15px;
+  font-weight: 700;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: center;
+  color: var(--white);
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 25px;
+  border: none;
+  border-radius: 6px;
+  background-color: #3cb371;
+  border: 1px solid #3cb371;
+}
+
+.theme-btn-primary1 {
+  height: 15px;
+  flex-grow: 0;
+  font-family: Inter;
+  font-size: 15px;
+  font-weight: 700;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: center;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 25px;
+  border: none;
+  border-radius: 6px;
+  border: 1px solid #3cb371;
+  background-color: var(--white);
+  color: #000;
+}
+.theme-btn-primary1:hover{
+  border: 1px solid #3cb371;
+  background-color: #3cb371;
+  color: #fff;
+}
+.theme-btn-primary:hover{
+  border: 1px solid #3cb371;
+  background-color: #3cb371;
+}
+.primary_title {
+  font-family: Inter;
+  font-weight: bold;
+  font-size: 21px;
+  padding: 10px 3px 3px;
+  text-transform: uppercase;
+  color:#3cb371;
+}
+.theme-label {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--new-black-1);
+}
+.label-required::after {
+  content: '*';
+  color: var(--red-3);
+}
+.ant-picker-input > input {
+  border-radius: 5px !important;
+}
+
+.botton-group{
+  position: "absolute";
+  bottom: "0.1%";
+  right: "5%";
+  background-color: "background.paper";
+  display: "flex";
+  justify-content: "space-between";
+  text-align: "center",
+}
+.theme-btn-default {
+  height: 15px;
+  flex-grow: 0;
+  font-family: Inter;
+  font-size: 15px;
+  font-weight: 700;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: center;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 25px;
+  border: none;
+  border-radius: 6px;
+  border: 1px solid green;
+  background-color: var(--white);
+  
+}
+.theme-btn-danger {
+  height: 15px;
+  flex-grow: 0;
+  font-family: Inter;
+  font-size: 15px;
+  font-weight: 700;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: center;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 25px;
+  border: none;
+  border-radius: 6px;
+  border: 1px solid #bb2d3b;
+  background-color: var(--white);
+  color: #000;
+}
+ 
+
+
+
 /*
  * Add the correct display in all browsers.
  */

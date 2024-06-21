@@ -4,16 +4,13 @@ import Swal from 'sweetalert2';
 const Edit = ({ employees, selectedEmployee, setEmployees, setIsEditing }) => {
   const id = selectedEmployee.id;
 
-  const [firstName, setFirstName] = useState(selectedEmployee.firstName);
-  const [lastName, setLastName] = useState(selectedEmployee.lastName);
-  const [email, setEmail] = useState(selectedEmployee.email);
-  const [salary, setSalary] = useState(selectedEmployee.salary);
-  const [date, setDate] = useState(selectedEmployee.date);
+  const [todo, setTodo] = useState(selectedEmployee.todo);
+  
 
   const handleUpdate = e => {
     e.preventDefault();
 
-    if (!firstName || !lastName || !email || !salary || !date) {
+    if (!todo) {
       return Swal.fire({
         icon: 'error',
         title: 'Error!',
@@ -24,11 +21,7 @@ const Edit = ({ employees, selectedEmployee, setEmployees, setIsEditing }) => {
 
     const employee = {
       id,
-      firstName,
-      lastName,
-      email,
-      salary,
-      date,
+      todo,
     };
 
     for (let i = 0; i < employees.length; i++) {
@@ -54,47 +47,16 @@ const Edit = ({ employees, selectedEmployee, setEmployees, setIsEditing }) => {
   return (
     <div className="small-container">
       <form onSubmit={handleUpdate}>
-        <h1>Edit Employee</h1>
-        <label htmlFor="firstName">First Name</label>
+        <h1>Edit Todo</h1>
+        <label htmlFor="todo">Todo Name</label>
         <input
-          id="firstName"
+          id="todo"
           type="text"
-          name="firstName"
-          value={firstName}
-          onChange={e => setFirstName(e.target.value)}
+          name="todo"
+          value={todo}
+          onChange={e => setTodo(e.target.value)}
         />
-        <label htmlFor="lastName">Last Name</label>
-        <input
-          id="lastName"
-          type="text"
-          name="lastName"
-          value={lastName}
-          onChange={e => setLastName(e.target.value)}
-        />
-        <label htmlFor="email">Email</label>
-        <input
-          id="email"
-          type="email"
-          name="email"
-          value={email}
-          onChange={e => setEmail(e.target.value)}
-        />
-        <label htmlFor="salary">Salary ($)</label>
-        <input
-          id="salary"
-          type="number"
-          name="salary"
-          value={salary}
-          onChange={e => setSalary(e.target.value)}
-        />
-        <label htmlFor="date">Date</label>
-        <input
-          id="date"
-          type="date"
-          name="date"
-          value={date}
-          onChange={e => setDate(e.target.value)}
-        />
+   
         <div style={{ marginTop: '30px' }}>
           <input type="submit" value="Update" />
           <input

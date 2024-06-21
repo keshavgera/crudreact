@@ -1,13 +1,14 @@
-import React from 'react';
+import React from "react";
+import { Button } from "react-bootstrap";
 
 const Table = ({ employees, handleEdit, handleDelete }) => {
   employees.forEach((employee, i) => {
     employee.id = i + 1;
   });
 
-  const formatter = new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
+  const formatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
     minimumFractionDigits: null,
   });
 
@@ -17,11 +18,7 @@ const Table = ({ employees, handleEdit, handleDelete }) => {
         <thead>
           <tr>
             <th>No.</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Email</th>
-            <th>Salary</th>
-            <th>Date</th>
+            <th>Todo Name</th>
             <th colSpan={2} className="text-center">
               Actions
             </th>
@@ -29,29 +26,39 @@ const Table = ({ employees, handleEdit, handleDelete }) => {
         </thead>
         <tbody>
           {employees.length > 0 ? (
-            employees.map((employee, i) => (
-              <tr key={employee.id}>
+            employees.map((item, i) => (
+              <tr
+                key={item.id}
+                sx={{
+                  "&:last-child td, &:last-child th": { border: 0 },
+                }}
+                style={{
+                  border: i % 2 == 0 ? "1px solid #fef1f1" : "1px solid #fff",
+                  background: i % 2 == 0 ? "#fef1f1" : "#fff",
+                }}
+              >
                 <td>{i + 1}</td>
-                <td>{employee.firstName}</td>
-                <td>{employee.lastName}</td>
-                <td>{employee.email}</td>
-                <td>{formatter.format(employee.salary)}</td>
-                <td>{employee.date} </td>
+                <td>{item.todo}</td>
                 <td className="text-right">
-                  <button
-                    onClick={() => handleEdit(employee.id)}
-                    className="button muted-button"
+                  <Button
+                    variant="success"
+                    className="theme-btn-primary1"
+                    onClick={() => handleEdit(item.id)}
+                    autoFocus
                   >
                     Edit
-                  </button>
+                  </Button>
                 </td>
                 <td className="text-left">
-                  <button
-                    onClick={() => handleDelete(employee.id)}
-                    className="button muted-button"
+                  <Button
+                    variant="danger"
+                    // className="theme-btn-primary1"
+                    onClick={() => handleDelete(item.id)}
+                    autoFocus
                   >
                     Delete
-                  </button>
+                  </Button>
+
                 </td>
               </tr>
             ))
